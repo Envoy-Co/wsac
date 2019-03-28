@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      {{#link 'help_center'}}
+      <img src="{{logo_url}}" alt="{{t 'logo'}}">
+      {{/link}}
+    </div>
+    <div class="main-header">
+      <h1>Welcome to the Washington State <span>Student Complaint Portal</span></h1>
+      {{search submit=false instant=true class='search search-full'}}
+    </div>
+    <div class="nav-wrapper">
+      <span class="icon-menu"></span>
+      <nav class="user-nav" id="user-nav">
+        {{#link 'new_request' class='submit-a-request'}}Submit a Complaint{{/link}}
+      </nav>
+      {{user_info}}
+    </div>
+  </div>
+</header>

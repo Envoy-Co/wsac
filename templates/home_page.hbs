@@ -1,0 +1,92 @@
+<div class="container">  
+
+  <ol class="breadcrumbs">
+    <li title="Student Complaint Portal">
+      <a href="/hc/en-us">Home</a>
+    </li>
+    <li title="FAQ">
+      Frequently Asked Questions
+    </li>
+  </ol>
+
+
+  <section class="section knowledge-base">
+   {{dc 'homepage'}}
+
+     <section class="section categories-list">
+      <section class="categories blocks">
+        <ul>
+          {{#each categories}}
+            {{#each sections}}
+
+            <div class="accordion">
+              {{#each articles}}
+              <h3>{{title}}</h3>
+              <div>{{body}}</div>
+              {{/each}}
+            </div>
+
+            {{/each}}
+          {{/each}}
+        </ul>
+        {{pagination}}
+      </section>
+    </section>
+
+    <div class="callout homepage-callout">
+      <h4>Didn’t find your answer?</h4>
+      <a href="/hc/requests/new">SUBMIT A COMPLAINT</a>
+      <p>Be advised that copies of complaints will be made available to the school involved and may be made available to other<br/>federal, state, or private agencies, and—upon request—to members of the public.</p>
+    </div>
+
+  <section class="categories blocks">
+    <ul class="blocks-list">
+      {{#each categories}}
+        {{#each sections}}
+        <li id="sect-{{id}}" class="blocks-item">
+          <a href='{{url}}' class="blocks-item-link">
+            <h4 class="blocks-item-title">
+              {{name}}
+            </h4>
+            <p class="blocks-item-description">{{excerpt description}}</p>
+          </a>
+        </li>
+        {{/each}}
+      {{/each}}
+    </ul>
+    {{pagination}}
+  </section>
+
+
+
+  {{#if promoted_articles}}
+  <section class="articles">
+    <h3>{{t 'promoted_articles'}}</h3>
+    <ul class="article-list promoted-articles">
+      {{#each promoted_articles}}
+      <li class="promoted-articles-item">
+        <a href="{{url}}">
+          {{title}}
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/if}}
+</section>
+
+{{#if help_center.community_enabled}}
+<section class="section community">
+  <h2>{{t 'community'}}</h2>
+  {{#link 'community' class='community-link'}}
+  {{t 'join_conversation'}}
+  {{/link}}
+
+  <div class="community-image"></div>
+</section>
+{{/if}}
+
+<section class="section activity">
+  {{recent_activity}}
+</section>
+</div>
